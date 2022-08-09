@@ -1,0 +1,44 @@
+﻿@model CancionesTest.Models.ViewModels.AgregarViewModel
+@{
+    ViewBag.Title = "Agregar";
+}
+<div class="container">
+    <br /><br /><br /><br />
+
+    @using (Html.BeginForm("Agregar", "TB_Canciones", FormMethod.Post))
+    {
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+
+                    @Html.LabelFor(d => d.Titulo, "Titulo *")
+                    @Html.TextBoxFor(d => d.Titulo, "", new { @class = "form-control", @style = "border-color: grey;" })
+                    @Html.ValidationMessageFor(d => d.Titulo, null, new { @style = "color:red;" })
+                </div>
+                <div>
+
+                    @Html.LabelFor(d => d.Grupo, "Grupo *")
+                    @Html.TextBoxFor(d => d.Grupo, "", new { @class = "form-control", @style = "border-color: grey;" })
+                    @Html.ValidationMessageFor(d => d.Grupo, null, new { @style = "color:red;" })
+                </div>
+                <div>
+
+                    @Html.LabelFor(d => d.Año, "Año *")
+                    @Html.TextBoxFor(d => d.Año, "", new { @class = "form-control", @style = "border-color: grey;" })
+                    @Html.ValidationMessageFor(d => d.Año, null, new { @style = "color:red;" })
+                </div>
+                <div>
+
+                    @Html.LabelFor(d => d.Genero, "Genero *")
+                    @Html.TextBoxFor(d => d.Genero, "", new { @class = "form-control", @style = "border-color: grey;" })
+                    @Html.ValidationMessageFor(d => d.Genero, null, new { @style = "color:red;" })
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <br />
+            <input type="submit" class="btn btn-success" value="Guardar" />
+        </div>
+    }
+</div>

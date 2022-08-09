@@ -1,0 +1,38 @@
+﻿@model List<CancionesTest.Models.ViewModels.CancionesViewModels>
+@{
+    ViewBag.Title = "Lista de Canciones";
+}
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+
+    <div class="row">
+        <a href="~/TB_Canciones/Agregar" class="btn btn-primary">Nuevo</a>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Titulo</th>
+                        <th>Grupo</th>
+                        <th>Año</th>
+                        <th>Genero</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var elemento in Model)
+                    {
+                        <tr>
+                            <td>@elemento.Titulo</td>
+                            <td>@elemento.Grupo</td>
+                            <td>@elemento.Año</td>
+                            <td>@elemento.Genero</td>
+                            <td><a href="~/TB_Canciones/Eliminar/@elemento.id" class="btn btn-danger">Eliminar</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
